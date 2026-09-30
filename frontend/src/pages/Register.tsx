@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://anvaya-9dac.onrender.com";
 
 export default function Register() {
   const navigate = useNavigate();

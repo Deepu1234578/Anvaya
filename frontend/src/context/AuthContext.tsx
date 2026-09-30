@@ -84,7 +84,7 @@ export function AuthProvider({
 
   const googleLogin = async (credential: string) => {
     const response = await fetch(
-      "http://127.0.0.1:8000/api/auth/google",
+      "https://anvaya-9dac.onrender.com/api/auth/google",
       {
         method: "POST",
         headers: {

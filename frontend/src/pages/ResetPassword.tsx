@@ -8,7 +8,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://anvaya-9dac.onrender.com";
 
 export default function ResetPassword() {
   const navigate = useNavigate();
