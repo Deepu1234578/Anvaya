@@ -8,7 +8,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from app.services.email_service import send_password_reset_email
 
-
+from app.core.config import settings
 
 from app.api.deps import get_current_user, get_db, require_roles
 from app.api.deps import get_current_user, get_db
@@ -227,7 +227,7 @@ def forgot_password(
     # Development mode:
     # Print the reset link in the backend terminal.
     reset_link = (
-        f"http://localhost:5173/reset-password"
+         f"{settings.FRONTEND_URL}/reset-password"
         f"?token={reset_token}"
     )
 
