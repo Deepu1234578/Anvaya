@@ -525,19 +525,19 @@ export default function ResetPassword() {
                 }}
               >
                 <p className="text-[10px] uppercase tracking-[0.45em] text-emerald-300/70">
-                  Access Restored
+                  Security Protocol Complete
                 </p>
 
                 <h1 className="mt-4 text-3xl font-medium tracking-tight md:text-4xl">
-                  Security credentials updated
+                  Password changed successfully
                 </h1>
 
                 <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-white/30">
-                  Your ANVAYA password has been successfully
-                  reconfigured.
+                  Your ANVAYA password has been securely updated.
+                  Your account credentials are now protected.
                 </p>
 
-                <motion.button
+                <motion.div
                   initial={{
                     opacity: 0,
                     y: 10,
@@ -549,11 +549,12 @@ export default function ResetPassword() {
                   transition={{
                     delay: 0.5,
                   }}
-                  onClick={() => navigate("/login")}
-                  className="mt-9 rounded-xl bg-white px-7 py-3.5 text-sm font-medium text-black transition hover:bg-cyan-50"
+                  className="mx-auto mt-9 w-fit rounded-xl border border-emerald-300/10 bg-emerald-300/[0.04] px-6 py-3.5"
                 >
-                  Return to ANVAYA
-                </motion.button>
+                  <span className="text-[9px] uppercase tracking-[0.25em] text-emerald-300/60">
+                    You may now close this window
+                  </span>
+                </motion.div>
               </motion.div>
             )}
 
