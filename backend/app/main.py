@@ -1,4 +1,17 @@
 
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from app.api.auth import router as auth_router
+from app.api.routes.gis import router as gis_router
+
+app = FastAPI(
+    title="ANVAYA API",
+    description="AI-Powered Smart Logistics & Accessibility Intelligence Platform",
+    version="0.2.0",
+)
+
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -12,3 +25,16 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Register API routers
+app.include_router(auth_router)
+app.include_router(gis_router)
+
+
+@app.get("/")
+def root():
+    return {
+        "name": "ANVAYA",
+        "message": "ANVAYA API is running",
+        "version": "0.2.0",
+    }
